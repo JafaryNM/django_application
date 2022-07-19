@@ -17,3 +17,10 @@ def variable_view(request):
                  }
     
     return render(request,'myapp/variables.html', context=my_variable)
+
+def all_list(requeest):
+    
+    my_variable={'numbers_list':[10,20,30], 'users':{
+        'first_name':'jafary', 'job':'System Engineer'
+    }}
+    return render(requeest, 'myapp/forloop_tmp.html', context=my_variable)
