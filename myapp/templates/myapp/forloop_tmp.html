@@ -5,9 +5,29 @@
 
 <h1> Return number using for loop template tags </h1>
  
- {% for item in numbers_list %}
-     <li> {{item}} </li>
- {% endfor %}
+ <ul>
+
+    {%for num in numbers_list %}
+
+        {% if num == 10 %}
+       
+           <li> You Score number 10 </li>
+    
+        {% else %}
+         
+            <li>  {{num}} </li>
+
+        {% endif %}
+
+    <li> {{num}} </li>
+     
+
+
+
+    {%endfor%}
+ 
+
+ </ul>
 
 
  
