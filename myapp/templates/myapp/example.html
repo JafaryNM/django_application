@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <title> Document </title>
-<body>
+{% extends 'base.html' %}
 
-<h1> Template Connected </h1>
+{% block  'content' %}
 
-<li> List of all important numbers </li>
-<p> Click to see all client </li>
-    <a href=" {% url 'all_list_inloop' %}"> Click here </a>
+<h1> This is inside block example .HTML </h1>
 
-</body>
-</html>
+{% endblock%}
