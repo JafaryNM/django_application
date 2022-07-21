@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from myapp.models import Patient
 
 # Create your views here.
 # location of template folde is in myapp/example.html
@@ -22,3 +23,13 @@ def all_list(requeest):
     
     my_variable={'numbers_list':[10,20,30], 'user_login':False }
     return render(requeest, 'myapp/forloop_tmp.html', context=my_variable)
+
+def all_patients(request):
+
+    all_patients=Patient.objects.all()
+    
+    # Convert QuerySet To Dictionaries
+    dict_all_patients={
+        'patients':all_patients
+    }
+    return render(request,'myapp/patients.html', context=dict_all_patients)
