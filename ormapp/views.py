@@ -3,7 +3,10 @@ from ormapp.models import Student
 from django.db.models import Q
 # Create your views here.
 
+
+
 def index(request):
+    ########################### Part 1 ###################33
     # Return students  in database
 
     #students=Student.objects.all()
@@ -18,5 +21,22 @@ def index(request):
 
 
     return render( request, 'index.html',  {'students' : students})
+
+##################### Part 2 ###########################
+
+def student_list(request):
+    
+    
+    students=Student.objects.filter(classroom=3)& Student.objects.filter(first_name__startswith=("P"))
+    
+    
+
+    return render(request, 'index2or.html', {'students':students })
+
+
+
+_
+
+
 
 
